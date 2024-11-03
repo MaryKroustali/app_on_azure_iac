@@ -39,5 +39,9 @@ sqlcmd -S sql-record-store.database.windows.net -i chinook.sql -d chinook -U {db
 ```
 Replace `{db_username}` and `{db_password}` with values from [main.bicepparam](bicep/main.bicepparam).
 
+### Application Usage
+
+Using a browser, navigate to [https://app-record-store.azurewebsites.net/](https://app-record-store.azurewebsites.net/), where `app-record-store` is the name of the App Service resource.
+
 ## Next Steps
 [app_on_azure_cicd](app_on_azure_cicd): Automating the deployment and configuration of the Record Store application using Github Actions.
