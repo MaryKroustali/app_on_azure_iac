@@ -20,4 +20,14 @@ resource sql_server 'Microsoft.Sql/servers@2023-08-01-preview' = {
   }
 }
 
+// Enable public access for SQL Server
+resource symbolicname 'Microsoft.Sql/servers/firewallRules@2023-05-01-preview' = {
+  name: 'allow_all_inbound'
+  parent: sql_server
+  properties: {
+    endIpAddress: '255.255.255.255'
+    startIpAddress: '0.0.0.0'
+  }
+}
+
 output name string = sql_server.name
